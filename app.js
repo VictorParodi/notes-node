@@ -13,7 +13,8 @@ console.log(argv);
 
 
 if (command === 'add') {
-    notes.addNotes(argv.title, argv.body);
+    let note = notes.addNotes(argv.title, argv.body);
+    note? console.log(`Note created => ${note.title}: ${note.body}`) : console.log('This title is in already used');
 } else if (command === 'list') {
     notes.getAll();
 } else if (command === 'read') {
